@@ -1,0 +1,37 @@
+TrueSkill One-On-One rating:
+DESDE - Mean(mu)=-42.38, Std-Dev(sigma)=0.82 RI=[-44.02, -40.74]
+CCPTEA - Mean(mu)=-45.93, Std-Dev(sigma)=0.81 RI=[-47.54, -44.32]
+CCEMT - Mean(mu)=-46.41, Std-Dev(sigma)=0.81 RI=[-48.03, -44.8]
+IMTCMO - Mean(mu)=-46.59, Std-Dev(sigma)=0.81 RI=[-48.21, -44.98]
+MTCMMO - Mean(mu)=-51.05, Std-Dev(sigma)=0.87 RI=[-52.78, -49.32]
+
+TrueSkill Free-For-All rating:
+DESDE - Mean(mu)=29.81, Std-Dev(sigma)=0.68 RI=[28.46, 31.16]
+CCPTEA - Mean(mu)=26.27, Std-Dev(sigma)=0.66 RI=[24.96, 27.59]
+CCEMT - Mean(mu)=26.22, Std-Dev(sigma)=0.66 RI=[24.91, 27.53]
+IMTCMO - Mean(mu)=25.91, Std-Dev(sigma)=0.65 RI=[24.6, 27.22]
+MTCMMO - Mean(mu)=18.87, Std-Dev(sigma)=0.72 RI=[17.42, 20.31]
+
+Glicko2 rating:
+DESDE - Rating=1,753.3 RD=50 ro=0.06 RI=[1653.27, 1853.27]
+CCEMT - Rating=1,580.7 RD=50 ro=0.06 RI=[1480.68, 1680.68]
+IMTCMO - Rating=1,540.3 RD=50 ro=0.06 RI=[1440.34, 1640.34]
+CCPTEA - Rating=1,538.9 RD=50 ro=0.06 RI=[1438.9, 1638.9]
+MTCMMO - Rating=1,086.8 RD=50 ro=0.06 RI=[986.81, 1186.81]
+
+Game results:
+DESDE [win=1339, lose=460, draw=1]
+	 Against:{CCEMT=[win=285, lose=165, draw=0], IMTCMO=[win=311, lose=139, draw=0], MTCMMO=[win=436, lose=14, draw=0], CCPTEA=[win=307, lose=142, draw=1]}
+	 Problems:{CEC2024CMOP_SDC14k999=[win=105, lose=15, draw=0], CEC2024CMOP_SDC3k999=[win=102, lose=18, draw=0], CEC2024CMOP_SDC5k999=[win=97, lose=23, draw=0], CEC2024CMOP_SDC8k999=[win=64, lose=55, draw=1], CEC2024CMOP_SDC11k999=[win=94, lose=26, draw=0], CEC2024CMOP_SDC1k999=[win=91, lose=29, draw=0], CEC2024CMOP_SDC13k999=[win=119, lose=1, draw=0], CEC2024CMOP_SDC15k999=[win=93, lose=27, draw=0], CEC2024CMOP_SDC9k999=[win=120, lose=0, draw=0], CEC2024CMOP_SDC6k999=[win=79, lose=41, draw=0], CEC2024CMOP_SDC10k999=[win=79, lose=41, draw=0], CEC2024CMOP_SDC4k999=[win=88, lose=32, draw=0], CEC2024CMOP_SDC2k999=[win=93, lose=27, draw=0], CEC2024CMOP_SDC7k999=[win=58, lose=62, draw=0], CEC2024CMOP_SDC12k999=[win=57, lose=63, draw=0]}
+CCEMT [win=1040, lose=760, draw=0]
+	 Against:{IMTCMO=[win=239, lose=211, draw=0], MTCMMO=[win=393, lose=57, draw=0], CCPTEA=[win=243, lose=207, draw=0], DESDE=[win=165, lose=285, draw=0]}
+	 Problems:{CEC2024CMOP_SDC14k999=[win=49, lose=71, draw=0], CEC2024CMOP_SDC3k999=[win=72, lose=48, draw=0], CEC2024CMOP_SDC5k999=[win=65, lose=55, draw=0], CEC2024CMOP_SDC8k999=[win=81, lose=39, draw=0], CEC2024CMOP_SDC11k999=[win=68, lose=52, draw=0], CEC2024CMOP_SDC1k999=[win=82, lose=38, draw=0], CEC2024CMOP_SDC13k999=[win=42, lose=78, draw=0], CEC2024CMOP_SDC15k999=[win=88, lose=32, draw=0], CEC2024CMOP_SDC9k999=[win=46, lose=74, draw=0], CEC2024CMOP_SDC6k999=[win=72, lose=48, draw=0], CEC2024CMOP_SDC10k999=[win=70, lose=50, draw=0], CEC2024CMOP_SDC4k999=[win=63, lose=57, draw=0], CEC2024CMOP_SDC2k999=[win=70, lose=50, draw=0], CEC2024CMOP_SDC7k999=[win=89, lose=31, draw=0], CEC2024CMOP_SDC12k999=[win=83, lose=37, draw=0]}
+IMTCMO [win=970, lose=830, draw=0]
+	 Against:{CCEMT=[win=211, lose=239, draw=0], MTCMMO=[win=390, lose=60, draw=0], CCPTEA=[win=230, lose=220, draw=0], DESDE=[win=139, lose=311, draw=0]}
+	 Problems:{CEC2024CMOP_SDC14k999=[win=49, lose=71, draw=0], CEC2024CMOP_SDC3k999=[win=61, lose=59, draw=0], CEC2024CMOP_SDC5k999=[win=53, lose=67, draw=0], CEC2024CMOP_SDC8k999=[win=80, lose=40, draw=0], CEC2024CMOP_SDC11k999=[win=71, lose=49, draw=0], CEC2024CMOP_SDC1k999=[win=68, lose=52, draw=0], CEC2024CMOP_SDC13k999=[win=52, lose=68, draw=0], CEC2024CMOP_SDC15k999=[win=49, lose=71, draw=0], CEC2024CMOP_SDC9k999=[win=56, lose=64, draw=0], CEC2024CMOP_SDC6k999=[win=69, lose=51, draw=0], CEC2024CMOP_SDC10k999=[win=58, lose=62, draw=0], CEC2024CMOP_SDC4k999=[win=74, lose=46, draw=0], CEC2024CMOP_SDC2k999=[win=69, lose=51, draw=0], CEC2024CMOP_SDC7k999=[win=81, lose=39, draw=0], CEC2024CMOP_SDC12k999=[win=80, lose=40, draw=0]}
+CCPTEA [win=967, lose=832, draw=1]
+	 Against:{CCEMT=[win=207, lose=243, draw=0], IMTCMO=[win=220, lose=230, draw=0], MTCMMO=[win=398, lose=52, draw=0], DESDE=[win=142, lose=307, draw=1]}
+	 Problems:{CEC2024CMOP_SDC14k999=[win=57, lose=63, draw=0], CEC2024CMOP_SDC3k999=[win=37, lose=83, draw=0], CEC2024CMOP_SDC5k999=[win=68, lose=52, draw=0], CEC2024CMOP_SDC8k999=[win=74, lose=45, draw=1], CEC2024CMOP_SDC11k999=[win=67, lose=53, draw=0], CEC2024CMOP_SDC1k999=[win=59, lose=61, draw=0], CEC2024CMOP_SDC13k999=[win=54, lose=66, draw=0], CEC2024CMOP_SDC15k999=[win=64, lose=56, draw=0], CEC2024CMOP_SDC9k999=[win=62, lose=58, draw=0], CEC2024CMOP_SDC6k999=[win=65, lose=55, draw=0], CEC2024CMOP_SDC10k999=[win=65, lose=55, draw=0], CEC2024CMOP_SDC4k999=[win=75, lose=45, draw=0], CEC2024CMOP_SDC2k999=[win=68, lose=52, draw=0], CEC2024CMOP_SDC7k999=[win=72, lose=48, draw=0], CEC2024CMOP_SDC12k999=[win=80, lose=40, draw=0]}
+MTCMMO [win=183, lose=1617, draw=0]
+	 Against:{CCEMT=[win=57, lose=393, draw=0], IMTCMO=[win=60, lose=390, draw=0], CCPTEA=[win=52, lose=398, draw=0], DESDE=[win=14, lose=436, draw=0]}
+	 Problems:{CEC2024CMOP_SDC14k999=[win=40, lose=80, draw=0], CEC2024CMOP_SDC3k999=[win=28, lose=92, draw=0], CEC2024CMOP_SDC5k999=[win=17, lose=103, draw=0], CEC2024CMOP_SDC8k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC11k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC1k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC13k999=[win=33, lose=87, draw=0], CEC2024CMOP_SDC15k999=[win=6, lose=114, draw=0], CEC2024CMOP_SDC9k999=[win=16, lose=104, draw=0], CEC2024CMOP_SDC6k999=[win=15, lose=105, draw=0], CEC2024CMOP_SDC10k999=[win=28, lose=92, draw=0], CEC2024CMOP_SDC4k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC2k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC7k999=[win=0, lose=120, draw=0], CEC2024CMOP_SDC12k999=[win=0, lose=120, draw=0]}

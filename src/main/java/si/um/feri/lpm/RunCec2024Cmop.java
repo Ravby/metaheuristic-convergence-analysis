@@ -85,9 +85,9 @@ public class RunCec2024Cmop {
         cec2024CmopStoredBenchmark.setDisplayAdvancedStats(false);
         cec2024CmopStoredBenchmark.addAlgorithms(players);
         cec2024CmopStoredBenchmark.wholeConvergenceGraph = true;
-        cec2024CmopStoredBenchmark.run(5); //30
+        cec2024CmopStoredBenchmark.run(cec2024cmop.runs);
         TournamentResults tournamentResults = cec2024CmopStoredBenchmark.getTournamentResults();
-        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024cmop.name +"_whole_convergence_graph_5runs");
+        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024cmop.name +"_whole_convergence_graph");
 
     }
 }
