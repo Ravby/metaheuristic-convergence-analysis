@@ -39,6 +39,12 @@ public class RunCec2024 {
         players.add(new DummyAlgorithm("mLSAHDE-RL", algorithmResultsDir, fileFormat));
         players.add(new DummyAlgorithm("RDE", algorithmResultsDir, fileFormat));
 
+        //additional algorithms, which didn't compete in the competition
+        players.add(new DummyAlgorithm("LSHADE", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("GWO", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("SSA", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("GAOA", algorithmResultsDir, fileFormat));
+
         HashMap<String, ArrayList<String>> playerRatings;
         playerRatings = new HashMap<>();
         for (int k = 0; k < cec2024.k; k++) {
@@ -90,6 +96,5 @@ public class RunCec2024 {
         cec2024StoredBenchmark.run(cec2024.runs);
         TournamentResults tournamentResults = cec2024StoredBenchmark.getTournamentResults();
         tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024.name +"_whole_convergence_graph");
-
     }
 }
