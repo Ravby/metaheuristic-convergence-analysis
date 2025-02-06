@@ -1,12 +1,5 @@
 package si.um.feri.lpm;
 
-enum BenchmarkId {
-    CEC2017,
-    CEC2021,
-    CEC2022,
-    CEC2024,
-    CEC2024CMOP
-}
 public class BenchmarkInfo {
     public String name;
     public BenchmarkId id;
@@ -15,8 +8,9 @@ public class BenchmarkInfo {
     public int runs;
     public int[] dimensions;
     public int[] evaluations;
+    public String[] algorithms;
 
-    public BenchmarkInfo(String name, BenchmarkId id, int numberOfProblems, int runs, int k, int[] dimensions, int[] evaluations) {
+    public BenchmarkInfo(String name, BenchmarkId id, int numberOfProblems, int runs, int k, int[] dimensions, int[] evaluations, String[] algorithms) {
         this.name = name;
         this.id = id;
         this.numberOfProblems = numberOfProblems;
@@ -24,5 +18,6 @@ public class BenchmarkInfo {
         this.runs = runs;
         this.dimensions = dimensions;
         this.evaluations = evaluations;
+        this.algorithms = algorithms;
     }
 }
