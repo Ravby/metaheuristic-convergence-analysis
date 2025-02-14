@@ -172,6 +172,7 @@ fun generatePlot(
     // apply theme settings for text formatting
     plot += theme(
         title = elementText(face = "bold"), // 'title' applies to plot's title, subtitle, caption
+        axisTitleX = elementText(size = 28),
         axisTextX = elementText(size = 24, angle = 0),
         axisTitleY = elementText(size = 28),
         axisTextY = elementText(size = 24),
