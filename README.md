@@ -32,4 +32,4 @@ This project relies on the EARS (Evolutionary Algorithm Rating System) framework
 1. **Format Result Files**: Ensure that the result files follow the official guidelines provided by each competition's "Problem Definitions and Evaluation Criteria" PDFs located in the [documentation](documentation) directory.
 2. **Add Result Files**: Add your algorithm's result files to the official results folder ([results_files](results_files)) based on the competition.
 3. **Run Benchmark**: Add your algorithm to the players list (`players.add(new DummyAlgorithm("AlgorithmName", algorithmResultsDir, fileFormat));`) in one of the run classes to execute the benchmark, comparing your algorithm with CEC winners or any other algorithm included in the benchmark.
-4. **Plot Rating bands**: Run the kotlin notebook e.g., [PlotCec2017RatingBands](src/main/kotlin/si/um/feri/lpm/PlotCec2017RatingBands.kt) to plot the rating bands for the selected competition.
+4. **Plot Rating bands**: Run the kotlin notebook e.g., [PlotCec2017RatingBands](src/main/java/si/um/feri/lpm/PlotCec2017RatingBands.ipynb) to plot the rating bands for the selected competition.
