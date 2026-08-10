@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "2.2.0"
 }
 
 group = "org.example"
@@ -23,9 +23,14 @@ dependencies {
     // EARS dependencies
     implementation(project(":EARS"))
     implementation(kotlin("stdlib-jdk8"))
-    // Lets-Plot Kotlin dependencies
-    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:4.9.3")
-    implementation("org.jetbrains.lets-plot:lets-plot-image-export:4.5.2")
+    // Lets-Plot Kotlin dependencies.
+    // The notebooks initialize Lets-Plot from this classpath, so these versions are what they run
+    // against. lets-plot-kotlin 4.15.0 pairs with the 4.11.0 core artifacts.
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:4.15.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-common-jvm:4.11.0")
+    implementation("org.jetbrains.lets-plot:platf-awt:4.11.0")
+    // Lets-Plot logs through kotlin-logging, which needs an SLF4J API on the runtime classpath.
+    implementation("org.slf4j:slf4j-api:2.0.18")
 }
 
 tasks.test {
