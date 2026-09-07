@@ -12,6 +12,8 @@ public class Cec2024StoredBenchmark extends SOBenchmark<NumberSolution<Double>, 
 
     public boolean wholeConvergenceGraph = false;
 
+    public int cutpointStep = 1; // 1 = every cutpoint; 10 = every 10th, i.e. 100 of the 1000
+
     public Cec2024StoredBenchmark() {
         this(cec2024.k - 1);
     }
@@ -35,8 +37,10 @@ public class Cec2024StoredBenchmark extends SOBenchmark<NumberSolution<Double>, 
         for (int p = 0; p < cec2024.numberOfProblems; p++) {
             for (int d = 0; d < cec2024.dimensions.length; d++) {
                 if (wholeConvergenceGraph) {
-                    for (int cutpoint = 0; cutpoint < cec2024.k; cutpoint++) {
-                        addTask(new DummyProblem(cec2024.name + "_" + (p + 1) + "_" + cec2024.dimensions[d] + "k" + (cutpoint), false), stopCriterion, cec2024.evaluations[d], 0, maxIterations);
+                    // anchored on the last cutpoint so the full-budget result is always included:
+                    // k = 1000, cutpointStep = 10 -> 9, 19, ... 999
+                    for (int k = (cec2024.k - 1) % cutpointStep; k < cec2024.k; k += cutpointStep) {
+                        addTask(new DummyProblem(cec2024.name + "_" + (p + 1) + "_" + cec2024.dimensions[d] + "k" + k, false), stopCriterion, cec2024.evaluations[d], 0, maxIterations);
                     }
                 } else {
                     addTask(new DummyProblem(cec2024.name + "_" + (p + 1) + "_" + cec2024.dimensions[d] + "k" + (cutpoint), false), stopCriterion, cec2024.evaluations[d], 0, maxIterations);

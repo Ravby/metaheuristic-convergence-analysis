@@ -12,6 +12,8 @@ public class Cec2024CmopStoredBenchmark extends SOBenchmark<NumberSolution<Doubl
 
     public boolean wholeConvergenceGraph = false;
 
+    public int cutpointStep = 1; // 1 = every cutpoint; 10 = every 10th, i.e. 100 of the 1000
+
     public Cec2024CmopStoredBenchmark() {
         this(cec2024cmop.k - 1);
     }
@@ -34,8 +36,10 @@ public class Cec2024CmopStoredBenchmark extends SOBenchmark<NumberSolution<Doubl
 
         for (int p = 0; p < cec2024cmop.numberOfProblems; p++) {
             if (wholeConvergenceGraph) {
-                for (int cutpoint = 0; cutpoint < cec2024cmop.k; cutpoint++) {
-                    addTask(new DummyProblem(cec2024cmop.name + "_SDC" + (p + 1) + "k" + (cutpoint), false), stopCriterion, cec2024cmop.evaluations[0], 0, maxIterations);
+                // anchored on the last cutpoint so the full-budget result is always included:
+                // k = 1000, cutpointStep = 10 -> 9, 19, ... 999
+                for (int k = (cec2024cmop.k - 1) % cutpointStep; k < cec2024cmop.k; k += cutpointStep) {
+                    addTask(new DummyProblem(cec2024cmop.name + "_SDC" + (p + 1) + "k" + k, false), stopCriterion, cec2024cmop.evaluations[0], 0, maxIterations);
                 }
             } else {
                 addTask(new DummyProblem(cec2024cmop.name + "_SDC" + (p + 1) + "k" + (cutpoint), false), stopCriterion, cec2024cmop.evaluations[0], 0, maxIterations);
