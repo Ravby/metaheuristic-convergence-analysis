@@ -44,7 +44,7 @@ public class RunCec2024Cmop {
             cec2024CmopBenchmark.setDisplayRatingCharts(false);
             cec2024CmopBenchmark.setDisplayAdvancedStats(false);
             cec2024CmopBenchmark.addAlgorithms(players);
-            cec2024CmopBenchmark.run(cec2024cmop.runs);
+            cec2024CmopBenchmark.run(10); //cec2024cmop.runs
             TournamentResults tournamentResults = cec2024CmopBenchmark.getTournamentResults();
             ArrayList<Player> playerResults = tournamentResults.getPlayers();
             for (Player player : playerResults) {
@@ -80,14 +80,18 @@ public class RunCec2024Cmop {
         }
 
         //save whole convergence graphs
+        int cutpointStep = 10;  // every 10th of the 1000 cutpoints
+        int cutpointsUsed = (cec2024cmop.k + cutpointStep - 1) / cutpointStep;
+
         Cec2024CmopStoredBenchmark cec2024CmopStoredBenchmark = new Cec2024CmopStoredBenchmark();
         cec2024CmopStoredBenchmark.setDisplayRatingCharts(false);
         cec2024CmopStoredBenchmark.setDisplayAdvancedStats(false);
         cec2024CmopStoredBenchmark.addAlgorithms(players);
         cec2024CmopStoredBenchmark.wholeConvergenceGraph = true;
-        cec2024CmopStoredBenchmark.run(cec2024cmop.runs);
+        cec2024CmopStoredBenchmark.cutpointStep = cutpointStep;
+        cec2024CmopStoredBenchmark.run(10);//cec2024cmop.runs
         TournamentResults tournamentResults = cec2024CmopStoredBenchmark.getTournamentResults();
-        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024cmop.name +"_whole_convergence_graph");
+        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024cmop.name + "_" + cutpointsUsed + "CP_whole_convergence_graph");
 
     }
 }

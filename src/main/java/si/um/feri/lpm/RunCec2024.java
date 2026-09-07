@@ -35,15 +35,22 @@ public class RunCec2024 {
         players.add(new DummyAlgorithm("jSOa", algorithmResultsDir, fileFormat));
         players.add(new DummyAlgorithm("L-SRTDE", algorithmResultsDir, fileFormat));
         players.add(new DummyAlgorithm("BlockEA", algorithmResultsDir, fileFormat));
-        players.add(new DummyAlgorithm("IEACOP", algorithmResultsDir, fileFormat));
-        players.add(new DummyAlgorithm("mLSAHDE-RL", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("iEACOP", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("mLSHADE-RL", algorithmResultsDir, fileFormat));
         players.add(new DummyAlgorithm("RDE", algorithmResultsDir, fileFormat));
 
-        //additional algorithms, which didn't compete in the competition
-        players.add(new DummyAlgorithm("LSHADE", algorithmResultsDir, fileFormat));
-        players.add(new DummyAlgorithm("GWO", algorithmResultsDir, fileFormat));
-        players.add(new DummyAlgorithm("SSA", algorithmResultsDir, fileFormat));
-        players.add(new DummyAlgorithm("GAOA", algorithmResultsDir, fileFormat));
+        //additional algorithms, which didn't compete in the official competition
+        //reference algorithms
+        players.add(new DummyAlgorithm("LSHADE*","LSHADE", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("GWO*","GWO", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("RS*","RS", algorithmResultsDir, fileFormat));
+        //new highly cited with source code
+        players.add(new DummyAlgorithm("SFOA*","SFOA", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("APO*","APO", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("HOA*","HOA", algorithmResultsDir, fileFormat));
+        players.add(new DummyAlgorithm("PO*","PO", algorithmResultsDir, fileFormat));
+
+
 
         HashMap<String, ArrayList<String>> playerRatings;
         playerRatings = new HashMap<>();
@@ -52,7 +59,7 @@ public class RunCec2024 {
             cec2024Benchmark.setDisplayRatingCharts(false);
             cec2024Benchmark.setDisplayAdvancedStats(false);
             cec2024Benchmark.addAlgorithms(players);
-            cec2024Benchmark.run(cec2024.runs);
+            cec2024Benchmark.run(10); //cec2024.runs
             TournamentResults tournamentResults = cec2024Benchmark.getTournamentResults();
             ArrayList<Player> playerResults = tournamentResults.getPlayers();
             for (Player player : playerResults) {
@@ -83,18 +90,32 @@ public class RunCec2024 {
             sb.setLength(0);
         }
 
+        //run only last cutpoint
+        Cec2024StoredBenchmark cec2024BenchmarkFinalResults = new Cec2024StoredBenchmark(cec2024.k - 1);
+        cec2024BenchmarkFinalResults.setDisplayRatingCharts(false);
+        cec2024BenchmarkFinalResults.setDisplayAdvancedStats(false);
+        cec2024BenchmarkFinalResults.addAlgorithms(players);
+        cec2024BenchmarkFinalResults.run(10); //cec2024.runs
+        TournamentResults tournamentFinalResults = cec2024BenchmarkFinalResults.getTournamentResults();
+        tournamentFinalResults.saveToFile(experimentalResultsDir + File.separator + cec2024.name + "_final_results");
+
+
         for(NumberAlgorithm player : players) {
             ((DummyAlgorithm)player).resetRunNumbers();
         }
 
         //save whole convergence graphs
+        int cutpointStep = 10;  // every 10th of the 1000 cutpoints
+        int cutpointsUsed = (cec2024.k + cutpointStep - 1) / cutpointStep;
+
         Cec2024StoredBenchmark cec2024StoredBenchmark = new Cec2024StoredBenchmark();
         cec2024StoredBenchmark.setDisplayRatingCharts(false);
         cec2024StoredBenchmark.setDisplayAdvancedStats(false);
         cec2024StoredBenchmark.addAlgorithms(players);
         cec2024StoredBenchmark.wholeConvergenceGraph = true;
-        cec2024StoredBenchmark.run(cec2024.runs);
+        cec2024StoredBenchmark.cutpointStep = cutpointStep;
+        cec2024StoredBenchmark.run(10); //cec2024.runs
         TournamentResults tournamentResults = cec2024StoredBenchmark.getTournamentResults();
-        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024.name +"_whole_convergence_graph");
+        tournamentResults.saveToFile(experimentalResultsDir + File.separator + cec2024.name + "_" + cutpointsUsed + "CP_whole_convergence_graph");
     }
 }
