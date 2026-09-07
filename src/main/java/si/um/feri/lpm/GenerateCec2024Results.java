@@ -2,14 +2,33 @@ package si.um.feri.lpm;
 
 import org.um.feri.ears.algorithms.NumberAlgorithm;
 import org.um.feri.ears.algorithms.so.ao.AO;
+import org.um.feri.ears.algorithms.so.apo.APO;
+import org.um.feri.ears.algorithms.so.aro.ARO;
 import org.um.feri.ears.algorithms.so.avoa.AVOA;
+import org.um.feri.ears.algorithms.so.bpbo.BPBO;
 import org.um.feri.ears.algorithms.so.de.lshade.LSHADE;
+import org.um.feri.ears.algorithms.so.eao.EAO;
+import org.um.feri.ears.algorithms.so.eflo.EFLO;
 import org.um.feri.ears.algorithms.so.gaoa.GAOA;
+import org.um.feri.ears.algorithms.so.gjo.GJO;
+import org.um.feri.ears.algorithms.so.goa.GOA2;
 import org.um.feri.ears.algorithms.so.gwo.GWO;
+import org.um.feri.ears.algorithms.so.hoa.HOA;
+import org.um.feri.ears.algorithms.so.koa.KOA;
+import org.um.feri.ears.algorithms.so.lo.LO;
+import org.um.feri.ears.algorithms.so.lsrtde.LSRTDE;
+import org.um.feri.ears.algorithms.so.po.PO;
+import org.um.feri.ears.algorithms.so.poa.POA;
 import org.um.feri.ears.algorithms.so.random.RandomSearch;
 import org.um.feri.ears.algorithms.so.rsa.RSA;
 import org.um.feri.ears.algorithms.so.scso.SCSO;
+import org.um.feri.ears.algorithms.so.sfoa.SFOA;
+import org.um.feri.ears.algorithms.so.sho.SHO;
 import org.um.feri.ears.algorithms.so.ssa.SSA;
+import org.um.feri.ears.algorithms.so.tdo.TDO;
+import org.um.feri.ears.algorithms.so.waoa.WaOA;
+import org.um.feri.ears.algorithms.so.zoa.ZOA;
+import org.um.feri.ears.algorithms.so.coa.COA;
 import org.um.feri.ears.problems.*;
 import org.um.feri.ears.problems.unconstrained.cec2017.*;
 import org.um.feri.ears.util.Util;
@@ -64,15 +83,35 @@ public class GenerateCec2024Results {
         ArrayList<NumberAlgorithm> algorithms = new ArrayList<>();
 
         //All parameters set according to paper/source code
-        algorithms.add(new LSHADE());
-        algorithms.add(new GWO());
+        algorithms.add(new LSHADE()); //2014
+        algorithms.add(new GWO()); //2014
         algorithms.add(new RandomSearch());
-        algorithms.add(new SSA());
-        algorithms.add(new GAOA());
-        algorithms.add(new RSA());
-        algorithms.add(new SCSO());
-        algorithms.add(new AO());
-        algorithms.add(new AVOA());
+        algorithms.add(new SSA()); //2017
+        algorithms.add(new GAOA()); //2023
+        algorithms.add(new RSA()); //2023
+        algorithms.add(new SCSO()); //2023
+        algorithms.add(new AO()); //2021
+        algorithms.add(new AVOA()); //2021
+
+        algorithms.add(new APO()); //2024
+        algorithms.add(new BPBO()); //2025
+        algorithms.add(new EAO()); //2025
+        algorithms.add(new EFLO()); //2025
+        algorithms.add(new HOA()); //2024
+        algorithms.add(new PO()); //2024
+        algorithms.add(new SFOA()); //2025 - compared with 100 algorithms in the paper
+
+        algorithms.add(new SHO()); //2023
+        algorithms.add(new TDO()); //2022
+        algorithms.add(new WaOA()); //2023
+        algorithms.add(new ZOA()); //2022
+        algorithms.add(new ARO()); //2022
+        algorithms.add(new GJO()); //2022
+        algorithms.add(new GOA2()); //2023
+        algorithms.add(new KOA()); //2023
+        algorithms.add(new LO()); //2022
+        algorithms.add(new POA()); //2022
+        algorithms.add(new COA()); //2023
 
         for (NumberAlgorithm algorithm : algorithms) {
             System.out.println(algorithm.getId());
